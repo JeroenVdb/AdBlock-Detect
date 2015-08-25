@@ -5,11 +5,19 @@ I like this approach for detecting an AdBlocker because it doesn't involve makin
 ### Compatibility
 
 | Browser | Compatible |
-| ------------------- | ----------- |
-| Chrome + uBlock | OK |
-| Chrome + AdBlock | ? |
-| Chrome + AdBlock Plus | ? |
+| ------- | ---------- |
+| Chrome 44 + uBlock | OK |
+| Chrome 44 + AdBlock | OK |
+| Chrome 44 + AdBlock Plus | OK |
 | Firefox + AdBlock | ? |
+
+### Blocklist compatibility
+
+We check for id=adsense, this element should also be targetten (removed, hidden) by the AdBlockers
+
+| List | Compatible | url |
+| ---- | ---------- | --- |
+| EasyList + Dutch | OK | https://easylist-downloads.adblockplus.org/easylistdutch+easylist.txt |
 
 ### Resources
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.fake-adsense {
+			visibility: hidden;
+			position: fixed;
+			bottom: -100px;
+		}
+	</style>
+
+	<script>
+		window.addEventListener("load", function() {
+			var elementHeight = document.getElementById('adsense').clientHeight;
+
+			if (elementHeight === 0) {
+				console.log('You Sir, have an AdBlocker');
+			} else {
+				console.log('Yay! You don\'t have an AdBlocker');
+			}
+		});
+	</script>
+</head>
+<body>
+	<h1>Ik ben een artikel (fake)</h1>
+	<p>Lipsum...</p>
+	<img src="http://jeroenvdb.be/100-percent-webpage/images/thumbsup-jeroen.jpg" alt="Foto van Jeroen" width="300" />
+
+	<div id="adsense" class="fake-adsense">yipee! an advertisement</div>
+</body>
+</html>

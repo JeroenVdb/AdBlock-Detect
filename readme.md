@@ -9,7 +9,8 @@ I like this approach for detecting an AdBlocker because it doesn't involve makin
 | Chrome 44 + uBlock | OK |
 | Chrome 44 + AdBlock | OK |
 | Chrome 44 + AdBlock Plus | OK |
-| Firefox + AdBlock | ? |
+| Firefox + AdBlock Plus | OK |
+| IE9 + AdBlock Plus | OK |
 
 ### Blocklist compatibility
 

@@ -33,30 +33,9 @@
 			background-color: green;
 		}
 	</style>
-
-	<script>
-		'use strict';
-
-		function checkForAdBlocker() {
-			var elementHeight = document.getElementById('adsense').clientHeight;
-
-			if (elementHeight === 0) {
-				document.querySelector('.fjs-adblock-status').innerHTML = 'ACTIVE';
-				document.getElementsByTagName('body')[0].className += ' active';
-			} else {
-				document.querySelector('.fjs-adblock-status').innerHTML = 'NOT ACTIVE';
-				document.getElementsByTagName('body')[0].className += ' not-active';
-			}
-		}
-
-		window.addEventListener('load', function() {
-			window.setTimeout(checkForAdBlocker, 100);
-		});
-	</script>
 </head>
 <body>
-	<h1>I'm a (fake) article</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<h1>Detect if a user is using an AdBlocker</h1>
 	<p>
 		Adblocker is:
 		<span class="fjs-adblock-status"></span>
@@ -64,5 +43,7 @@
 	<img src="thumbsup-jeroen.jpg" alt="Foto van Jeroen" width="300" />
 
 	<div id="adsense" class="fake-adsense">yipee! an advertisement</div>
+
+	<script src="adblock-detect.js" async defer></script>
 </body>
 </html>

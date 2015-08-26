@@ -8,24 +8,60 @@
 			position: fixed;
 			bottom: -100px;
 		}
+
+		.active {
+			background-color: red;
+		}
+
+		.active img {
+			-webkit-transition-duration: 0.8s;
+			-moz-transition-duration: 0.8s;
+			-o-transition-duration: 0.8s;
+			transition-duration: 0.8s;
+
+			-webkit-transition-property: -webkit-transform;
+			-moz-transition-property: -moz-transform;
+			-o-transition-property: -o-transform;
+			transition-property: transform;
+
+			-ms-transform: rotate(180deg); /* IE 9 */
+			-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+			transform: rotate(180deg);
+		}
+
+		.not-active {
+			background-color: green;
+		}
 	</style>
 
 	<script>
-		window.addEventListener("load", function() {
+		'use strict';
+
+		function checkForAdBlocker() {
 			var elementHeight = document.getElementById('adsense').clientHeight;
 
 			if (elementHeight === 0) {
-				console.log('You Sir, have an AdBlocker');
+				document.querySelector('.fjs-adblock-status').innerHTML = 'ACTIVE';
+				document.getElementsByTagName('body')[0].className += ' active';
 			} else {
-				console.log('Yay! You don\'t have an AdBlocker');
+				document.querySelector('.fjs-adblock-status').innerHTML = 'NOT ACTIVE';
+				document.getElementsByTagName('body')[0].className += ' not-active';
 			}
+		}
+
+		window.addEventListener('load', function() {
+			window.setTimeout(checkForAdBlocker, 100);
 		});
 	</script>
 </head>
 <body>
-	<h1>Ik ben een artikel (fake)</h1>
-	<p>Lipsum...</p>
-	<img src="http://jeroenvdb.be/100-percent-webpage/images/thumbsup-jeroen.jpg" alt="Foto van Jeroen" width="300" />
+	<h1>I'm a (fake) article</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<p>
+		Adblocker is:
+		<span class="fjs-adblock-status"></span>
+	</p>
+	<img src="thumbsup-jeroen.jpg" alt="Foto van Jeroen" width="300" />
 
 	<div id="adsense" class="fake-adsense">yipee! an advertisement</div>
 </body>

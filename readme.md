@@ -19,6 +19,8 @@ We check for id=adsense, this element should also be targetten (removed, hidden)
 | List | Compatible | url |
 | ---- | ---------- | --- |
 | EasyList + Dutch | OK | https://easylist-downloads.adblockplus.org/easylistdutch+easylist.txt |
+| EasyList without element hiding | NOK | https://easylist-downloads.adblockplus.org/easylist_noelemhide.txt |
+
 
 ### Resources
 
